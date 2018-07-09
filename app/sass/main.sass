@@ -1,0 +1,632 @@
+@import "mixins"
+@import "reset"
+@import "fonts"
+@import "vars"
+
+
+body, html
+	background-image: url('../img/linelg-bg.png')
+	background-position: -195px -262px
+	background-repeat: no-repeat
+	background-attachment: scroll
+	font-family: $default-font
+	color: $default-color
+	width: 100%
+    height: 100%
+	overflow-x: hidden
+    
+input
+	&:focus
+		&:required
+			&:invalid
+				border: 2px solid $red-color!important
+input
+	&:required
+		&:valid
+			background: url('../img/icons/check.svg')
+			background-repeat: no-repeat
+			background-position: 96% center
+			background-size: 20px
+			transition: 0s!important
+
+
+.loader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-color: rgba(0,0,0,0.9)
+	z-index: 1000
+	img
+		width: 74px
+		height: 74px
+		position: absolute
+		left: 50%
+		top: 50%
+		margin-left: -37px
+		margin-top: -37px 
+
+.top-btn
+	width: 50px
+	height: 50px
+	background-color: #fff
+	
+	position: fixed
+	bottom: 120px
+	right: 5%
+	box-shadow: 0px 12px 21px 0px rgba(155,169,179,0.29)
+	cursor: pointer
+	span
+		width: 100%
+		height: 100%
+		display: block
+		background-image: url('../img/icons/down-arrow.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 16px 9px
+		transform: rotate(180deg)
+
+.wow
+	visibility: hidden
+
+.arrow-li
+	background-image: url('../img/icons/menu-arrow.svg')
+	background-repeat: no-repeat
+	background-position: center right
+	width: 16px
+	height: 100%
+	display: block
+	position: absolute
+	top: 1px
+	right: 2px
+	&.rotate-arrow
+		background-image: url('../img/icons/menu-up-arrow.svg')
+		
+
+.h-pouring
+	background: #fff
+	transition: 0.5s
+
+// hamburger nav-icon style
+.nav-icon
+	width: 35px
+	height: 31px
+	position: absolute
+	-webkit-transform: rotate(0deg)
+	-moz-transform: rotate(0deg)
+	-o-transform: rotate(0deg)
+	transform: rotate(0deg)
+	-webkit-transition: .5s ease-in-out
+	-moz-transition: .5s ease-in-out
+	-o-transition: .5s ease-in-out
+	transition: .5s ease-in-out
+	cursor: pointer
+	display: none
+	left: 5%
+	top: 21px
+
+
+.nav-icon span
+	display: block
+	position: absolute
+	height: 6px
+	width: 100%
+	background: #202945
+	opacity: 1
+	left: 0
+	-webkit-transform: rotate(0deg)
+	-moz-transform: rotate(0deg)
+	-o-transform: rotate(0deg)
+	transform: rotate(0deg)
+	-webkit-transition: .25s ease-in-out
+	-moz-transition: .25s ease-in-out
+	-o-transition: .25s ease-in-out
+	transition: .25s ease-in-out
+
+
+.nav-icon span:nth-child(1)
+	top: 0px
+
+
+.nav-icon span:nth-child(2)
+	top: 12px
+
+
+.nav-icon span:nth-child(3)
+	top: 24px
+
+
+.nav-icon.open span:nth-child(1)
+	top: 12px
+	-webkit-transform: rotate(135deg)
+	-moz-transform: rotate(135deg)
+	-o-transform: rotate(135deg)
+	transform: rotate(135deg)
+
+
+.nav-icon.open span:nth-child(2)
+	opacity: 0
+	left: -60px
+
+.nav-icon.open span:nth-child(3)
+	top: 12px
+	-webkit-transform: rotate(-135deg)
+	-moz-transform: rotate(-135deg)
+	-o-transform: rotate(-135deg)
+	transform: rotate(-135deg)
+// end style hamburger icon
+
+.wrapper
+	position: relative
+	width: 90%
+	margin: 0 auto
+	height: 100%
+	header
+		padding: 14px 0 22px 0
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		transition: 0.5s
+		.logo
+			width: 150px
+			img
+				width: 100%
+		nav
+			color: #717274
+			height: auto
+			.buttons-block
+				display: flex
+				flex-direction: row
+				justify-content: flex-end
+				align-items: center
+				font-family: $default-font
+				font-size: 12px
+				margin-bottom: 22px
+				div
+					display: flex
+					flex-direction: row
+					align-items: center
+					cursor: pointer
+					&:not(:last-child)
+						margin-right: 25px
+				.search
+					height: 20px
+					img
+						cursor: pointer
+				.search-field
+					display: none
+					position: fixed
+					width: 100%
+					top: 0
+					bottom: 0
+					right: 0
+					left: 0
+					background-color: rgba(0,0,0,0.85)
+					z-index: 9999
+					input
+						position: absolute
+						top: 70px
+						right: 5%
+						width: 90%
+						height: 150px
+						background: transparent
+						border: none
+						border-bottom: 3px solid #797e80
+						outline: none
+						font-size: 60px
+						color: #fff
+					.close
+						position: absolute
+						top: 20px
+						right: 20px
+						img
+							width: 50px
+							height: 50px
+
+				.phone
+					padding-right: 10px
+					background-image: url('../img/icons/menu-arrow.svg')
+					background-repeat: no-repeat
+					background-position: right center
+					span
+						border-bottom: 1px dashed #717274
+				.my-settings
+					.profile
+						display: inline-block
+						padding-left: 24px
+						background-image: url('../img/icons/profile.svg')
+						background-repeat: no-repeat
+						background-position: left center
+						a
+							font-size: 13px
+							color: #717274
+					.language
+						display: inline-block
+						padding-right: 10px
+						background-image: url('../img/icons/menu-arrow.svg')
+						background-repeat: no-repeat
+						background-position: right center
+						svg
+							width: 12px
+						span
+							padding: 0 0 0 5px
+			.menu
+				font-size: 14px
+				font-family: 'DINPro-Medium'
+				display: inline-block
+				ul
+					text-transform: uppercase
+					li
+						display: inline-block
+						position: relative
+						margin-right: 30px
+						padding-right: 14px
+						box-sizing: border-box
+						a
+							display: block
+							width: 100%
+						ul
+							position: absolute
+							width: auto
+							min-width: 100px
+							background: #fff
+							box-shadow: 0px 12px 21px 0px rgba(155,169,179,0.29)
+							li
+								padding: 5px 0
+								display: block
+								width: 100%
+								transition: 0.5s
+								&:hover
+									background-color: $red-color
+									transition: 0.5s
+									a
+										color: #fff
+								
+			.basket
+				cursor: pointer
+				color: #717274
+				font-family: 'SegoeUI-Semilight'
+				display: inline-block
+				font-size: 12px
+				padding: 14px 30px 14px 15px
+				background: #f6f6f6
+				svg
+					width: 12px
+				span
+					padding-left: 5px
+	.content
+		padding-top: 60px
+		.wrapper-slider
+			overflow: hidden
+			position: relative
+			width: 100%
+			height: auto
+			#big-slider
+				width: 100%
+				height: 100%
+				.item
+					display: flex
+					flex-direction: row
+					justify-content: center
+					padding: 0 150px
+					width: 100%
+					height: 100%
+					box-sizing: border-box
+					.info-block
+						width: 100%
+						h3
+							color: $red-color
+							text-transform: uppercase
+							font-size: 36px
+							font-family: "DINPro-Bold"
+							padding-bottom: 40px
+						p
+							color: #8da5ba
+							font-size: 14px
+							font-family: $default-font
+							padding-bottom: 60px
+						.wrap-btn
+							span
+								cursor: pointer
+								background-image: linear-gradient(45deg, #1b1b1b 0%, #453f3f 100%)
+								color: #fff
+								font-size: 14px
+								font-family: "DINPro-Medium"
+								padding: 21px 10px 21px 30px
+								text-transform: uppercase
+								display: inline-block
+								&:hover
+									.arrow-btn
+										background-position: 17px 4px
+										transition: 0.8s
+								.arrow-btn
+									background: url('../img/icons/button-arrow.png')
+									background-repeat: no-repeat
+									display: inline
+									padding: 0px 20px
+									background-position: 7px 4px
+									transition: 0.6s
+					.wrap-img
+						width: 100%
+						height: 100%
+						transform: rotate(2deg)
+						img
+							width: 220px
+							margin: 0 auto
+							padding: 0 40px 40px 40px;
+							background-image: url('../img/shadow.png')
+							background-position: 45px 25px
+							background-size: contain
+							background-repeat: no-repeat
+			.wrapper-dots
+				position: absolute
+				top: 20%
+				right: 0
+				z-index: 999
+				.custom-dots
+					width: 100px
+					height: auto
+					display: flex
+					flex-direction: column
+					align-items: flex-end
+					.owl-dot
+						margin-top: 20px
+						transition: 1s
+						display: block
+						width: 22px
+						height: 3px
+						background: #999
+						&.active
+							background: $red-color
+							width: 42px
+							height: 4px
+							transition: 1s
+		.goods
+			padding-bottom: 125px
+			padding-top: 70px
+			text-align: center
+			h2
+				color: #202945
+				font-size: 30px
+				font-family: 'DINPro-Bold'
+				text-transform: uppercase
+				padding-bottom: 20px
+			a
+				display: inline-block
+				color: $red-color
+				padding-right: 15px
+				background-image: url('../img/icons/left-arrow.png')
+				background-repeat: no-repeat
+				background-position: right 6px
+			.list-goods
+				margin-top: 50px
+				height: auto
+				min-width: 100%
+				display: flex
+				@include custom-scroll-bar(2, #686868)
+				overflow-y: hidden
+				overflow-x: auto
+				.wrap-item
+					min-width: 254px
+					margin: 0 20px
+					padding-bottom: 25px
+					height: auto
+					.overlay-block
+						position: relative
+						display: flex
+						align-items: center
+						height: 317px
+						width: 100%
+						cursor: pointer
+						img
+							margin: 0 auto
+							display: block
+						.hover-block
+							position: absolute
+							top: 0
+							left: 0
+							width: 100%
+							height: 100%
+							background: #212121
+							opacity: 0
+							button
+								display: flex
+								justify-content: center
+								align-items: center
+								margin: 0 auto
+								text-transform: uppercase
+								color: #fff
+								padding: 15px 0
+								background-color: transparent
+								border: 1px solid #fff
+								width: 160px
+								// transition: .8s
+								font-family: 'SegoeUI-Regular'
+								&:nth-child(1)
+									margin-top: 80px
+								&:nth-child(2)
+									margin-top: 20px
+								&:hover
+									svg
+										path, circle
+											fill: #fff
+											transition: .8s
+									background-color: #f6303e
+								svg
+									padding-right: 10px
+									width: 16px
+									height: 16px
+									path
+										transition: .8s
+							.price
+								padding-left: 20px
+								padding-top: 55px
+								text-align: left
+								span
+									display: block
+									font-family: 'DINPro-Medium'
+									&:nth-child(1)
+										font-size: 16px
+										color: $red-color
+										text-decoration: line-through
+										padding-bottom: 10px
+									&:nth-child(2)
+										font-size: 20px
+										color: #fff												
+						.stock-product
+							color: #d60202
+							font-family: 'SegoeUI-Light'
+							font-size: 10px
+							border: 1px solid #d60202
+							position: absolute
+							padding: 5px
+							top: 15px
+							right: 15px
+							text-transform: uppercase
+					.text-block
+						text-align: left
+						h4
+							margin-top: 45px
+							font-size: 16px
+							color: #212121
+							font-family: 'DINPro-Bold'
+							padding-bottom: 14px
+							transition: 0.5s
+							cursor: pointer
+							&:hover
+								color: #eb0014
+								transition: 0.5s
+						span
+							color: #8da5ba
+							font-size: 14px
+							font-family: $default-font
+			.line-scroll
+				width: 100%
+				box-sizing: border-box
+				padding: 0 2%
+				height: 1px
+				background: #aeaeae
+				margin: 2px auto 0
+				display: none
+		.register-form
+			max-width: 952px
+			height: auto
+			box-sizing: border-box
+			background: linear-gradient(310deg,#dcdcdc,#fbfbfb)
+			padding: 60px 110px
+			display: block
+			margin: 0 auto
+			text-align: center
+			h2
+				color: #202945
+				font-family: 'DINPro-Bold'
+				font-size: 30px
+				padding-bottom: 50px
+			#form
+				font-family: 'SegoeUI-Light'
+				font-weight: 300
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				flex-wrap: wrap
+				input
+					box-sizing: border-box
+					outline: none
+					width: 48%
+					font-size: 16px
+					color: #717274
+					padding: 0 16px
+					height: 42px
+					border: 1px solid #b0bec1
+					margin-bottom: 25px
+					transition: 0.2s
+					background-color: #fff
+					&:nth-child(even)
+						margin-left: 2%
+					&:nth-child(odd)
+						margin-right: 2%
+					&:focus 
+						padding-left: 21px
+						transition: 1s
+				.SumoSelect
+					width: 48%
+					margin-right: 2%
+					.CaptionCont 
+						&.SelectBox
+							vertical-align: center
+							min-height: 30px
+							border-radius: 0px
+							text-align: left
+							span
+								line-height: 28px
+								color: #717274
+								font-style: normal
+								font-size: 16px
+								padding-left: 11px
+							label
+								i
+									background-image: url('../img/icons/down-arrow.svg')
+									background-repeat: no-repeat
+									right: 5px
+					&.open
+						.optWrapper
+							top: 42px
+							ul
+								li
+									padding: 13px 6px
+						.CaptionCont
+							&.SelectBox
+								label
+									i
+										transform: rotate(180deg)
+										
+				input[name="date"]
+					width: 48%
+					margin-left: 2%
+					background-image: url('../img/icons/calendar.svg')
+					background-repeat: no-repeat
+					background-size: 16px 15px
+					background-position: 96% center
+				input[name="message"]
+					width: 100%
+					margin-left: 0
+					margin-right: 0
+				button
+					font-size: 14px
+					color: #fff
+					width: 152px
+					height: 50px
+					background: $red-color
+					text-transform: uppercase
+					margin: 0 auto
+					display: block
+	footer
+		height: 224px
+		width: 100%
+		background: #fff
+		padding-top: 142px
+		box-sizing: border-box
+		display: flex
+		justify-content: space-between
+		align-items: center
+		p
+			font-size: 14px
+			&:nth-child(1)
+				color: #ca1919
+				font-family: 'SegoeUI-Semilight'
+			&:nth-child(2)
+				color: #3f5b69
+				font-family: 'SegoeUI-Light'
+				span
+					font-family: 'SegoeUI-Bold'
+					text-transform: uppercase
+					padding-right: 45px
+					background-image: url('../img/icons/footer-logo.png')
+					background-repeat: no-repeat
+					background-position: right center
+
+
+
+
+@import 'media'

@@ -1,0 +1,320 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.wrapper
+		.content
+			.goods
+				.line-scroll
+						display: block
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.wrapper
+		header
+			.logo
+				width: 110px
+			nav
+				.buttons-block
+					font-size: 11px
+					margin-bottom: 5px
+				.menu
+					font-size: 12px
+					font-family: 'DINPro-Medium'
+					ul
+						li
+							margin-right: 13px
+							padding-right: 10px
+					.basket
+						padding: 14px 15px 14px 15px
+		.content
+			.wrapper-slider
+				#big-slider
+					.item
+						.info-block
+							h3
+								font-size: 34px
+							.wrap-btn
+								span
+									padding: 19px 10px 19px 30px
+						.wrap-img
+							img
+								background-position: 32px 25px
+								width: 170px
+								height: 262px
+				.wrapper-dots
+					right: 10px
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	
+	.arrow-li
+		top: 14px
+		height: 16px
+
+	body
+		background: url('../img/linesm-bg.png')
+		background-position: -431px -308px
+		.wrapper
+			width: 100%
+			header
+				padding: 14px 5% 22px 5%
+				.logo
+					width: 82px
+					position: absolute
+					left: 50%
+					margin-left: -41px
+				.nav-icon
+					display: block
+				nav
+					width: 100%
+					margin-top: 55px
+					box-sizing: border-box
+					display: flex
+					flex-direction: column
+					padding-bottom: 20px
+					.buttons-block
+						order: 2
+						font-size: 11px
+						margin-bottom: 0
+						.search
+							position: absolute
+							top: 25px
+							right: 18%
+							margin-right: 0!important
+							svg
+								width: 23px
+								height: 22px
+						.phone
+							display: none
+						.my-settings
+							display: none
+							width: 100%
+							.profile
+								float: left
+							.language
+								float: right
+
+					.menu
+						display: none
+						order: 1
+						font-size: 12px
+						font-family: 'DINPro-Medium'
+						ul
+							padding-bottom: 20px
+							width: 100%
+							font-size: 14px
+							li
+								margin-right: 0
+								padding-right: 10px
+								display: block
+								width: 100%
+								padding: 15px 0
+								&.submenu
+									background-position: right 21px
+								ul
+									position: static
+									box-sizing: border-box
+									padding-left: 15px
+									padding-bottom: 0
+									box-shadow: none
+									li
+										a	
+											color: #8da5ba
+										&:hover
+											background-color: transparent
+											a
+												color: #717274
+
+					.basket
+						position: absolute
+						top: 23px
+						right: 5%
+						background: transparent
+						padding: 0
+						svg
+							width: 24px
+							position: relative
+						span
+							position: absolute
+							top: 0
+							right: 0
+							width: 18px
+							height: 18px
+							background: #fff
+							border-radius: 50%
+							display: block
+							padding-left: 0
+							text-align: center
+							line-height: 15px
+
+							em
+								display: none!important
+
+			.content
+				padding-top: 20px
+				.wrapper-slider
+					#big-slider
+						.item
+							flex-direction: column
+							padding: 0px 15px 100px 15px
+							.info-block
+								width: 100%
+								text-align: center
+								h3
+									font-size: 30px
+									padding-bottom: 25px
+								p
+									font-size: 12px
+									padding-bottom: 10px
+								.wrap-btn
+									position: absolute
+									bottom: 10px
+									left: 0
+									right: 0
+									span
+										cursor: pointer
+										background-image: linear-gradient(45deg, #1b1b1b 0%, #453f3f 100%)
+										color: #fff
+										font-size: 14px
+										font-family: "DINPro-Medium"
+										padding: 21px 10px 21px 30px
+										text-transform: uppercase
+										display: inline-block
+										&:hover
+											span
+												background-position: 17px 4px
+												transition: 0.8s
+										.arrow-btn
+											background: url('../img/icons/button-arrow.png')
+											background-repeat: no-repeat
+											display: inline
+											padding: 0px 20px
+											background-position: 7px 4px
+											transition: 0.6s
+							.wrap-img
+								img
+									width: 160px
+									height: 200px
+									background-position: 45px 15px
+				.goods
+					background-color: #fff
+					padding: 70px 10px 110px 10px
+					.list-goods
+						.wrap-item
+							min-width: 222px
+							.overlay-block
+								height: 274px
+								background: #f6f6f6
+								img
+									margin: 0 auto
+									display: block
+								.hover-block
+									button
+										&:nth-child(1)
+											margin-top: 50px
+									.price
+										padding-top: 35px
+				.register-form
+					background-color: #fff
+					width: 100%
+					h2
+						font-size: 28px
+						padding-bottom: 39px
+					#form
+						input
+							width: 100%
+							margin-left: 0!important
+							margin-right: 0!important
+							
+						.SumoSelect
+							width: 100%
+							margin-right: 0%
+							margin-bottom: 25px
+						input[name="date"]
+							width: 100%
+							margin-left: 0%
+							background-position: 98% center
+						input[name="message"]
+							width: 100%
+							margin-left: 0
+							margin-right: 0
+						button
+							width: 100%					
+								
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.content
+		padding-top: 0!important
+		.wrapper-slider
+			#big-slider
+				.item
+					.info-block
+						h3
+							font-size: 34px
+						.wrap-btn
+							span
+								padding: 19px 10px 19px 30px
+					.wrap-img
+						img
+							width: 110px!important
+							height: 150px!important
+							background-position: 22px 14px!important
+							padding: 20px!important
+		.register-form
+			padding: 60px 15px!important
+			h2
+				font-size: 26px
+				padding-bottom: 29px
+			#form
+				.SumoSelect
+					display: none				
+				input[name="date"]
+					display: none
+				input[name="organization"]
+					display: none
+	footer
+		padding-top: 115px
+		flex-direction: column
+		justify-content: center
+		p
+			padding-bottom: 25px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 769px)
+	.menu
+		display: inline-block!important
+	.my-settings
+		display: block!important
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
